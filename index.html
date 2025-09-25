@@ -257,18 +257,58 @@
     }
 
     footer {
-      text-align: center;
-      padding: 20px;
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.02);
-      margin-top: 40px;
-    }
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 25px 15px;
+  text-align: center;
+  border-top: 2px solid #1e293b;
+  font-family: 'Vazirmatn', sans-serif;
+}
 
-    @media(max-width:800px) {
-      .hero {
-        grid-template-columns: 1fr
-      }
-    }
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;              /* فاصله بین آیتم‌ها */
+  margin-bottom: 15px;
+}
+
+.contact-item {
+  white-space: nowrap;    /* جلوگیری از شکستن متن */
+  font-size: 15px;
+}
+
+.contact-item a {
+  color: #38bdf8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-item a:hover {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+/* نمایش شماره چپ به راست */
+.ltr {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  display: inline-block;
+}
+
+.copy {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* در موبایل آیتم‌ها ستونی می‌شوند */
+@media (max-width: 600px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
   </style>
 </head>
 
@@ -417,19 +457,35 @@
     </div>
   </section>
 
-  <footer id="contact">
-    <!-- اطلاعات تماس -->
-    <span><strong>تلفن:</strong> +98 921 127 17 20</span>
-    <span><strong>ایمیل:</strong>danielgia35@gmail.com</span>
-    <span><strong>لینکدین:</strong> <a href="https://www.linkedin.com/in/idanieldrew/" target="_blank"
-        style="color:#2563eb; text-decoration:none;">linkedin.com/in/idanieldrew</a></span>
-    <span><strong>گیت‌هاب:</strong> <a href="https://github.com/idanieldrew" target="_blank"
-        style="color:#2563eb; text-decoration:none;">github.com/idanieldrew</a></span>
-  </footer>
+<footer id="contact">
+  <div class="contact-container">
+    <div class="contact-item">
+      <strong>تلفن:</strong>
+      <a href="tel:+989211271720" class="ltr">+98&nbsp;921&nbsp;127&nbsp;17&nbsp;20</a>
+    </div>
+    <div class="contact-item">
+      <strong>ایمیل:</strong>
+      <a href="mailto:danielgia35@gmail.com">danielgia35@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <strong>لینکدین:</strong>
+      <a href="https://www.linkedin.com/in/idanieldrew/" target="_blank">linkedin.com/in/idanieldrew</a>
+    </div>
+    <div class="contact-item">
+      <strong>گیت‌هاب:</strong>
+      <a href="https://github.com/idanieldrew" target="_blank">github.com/idanieldrew</a>
+    </div>
+  </div>
+  <div class="copy">
+    © <span id="year"></span> Danial Soleimani
+  </div>
+</footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
 
 
 
